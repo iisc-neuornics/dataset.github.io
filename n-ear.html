@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<title>A Large Scale Neuromorphic Vehicle Activity Dataset</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/index.png");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="index.html" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="index.html" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#menu" class="w3-button w3-block w3-black">DATASET</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#where" class="w3-button w3-block w3-black">CITE AND DOWNLLOAD</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <!-- <span class="w3-tag">Open from 6am to 5pm</span> -->
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:90px">Event-Based Activity <br>Recognition Dataset</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white">15 Adr street, 5015</span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+<div class="w3-container" id="about">
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Download Event Based Vehicle Activity Dataset</span></h5>
+    <p>We  introduce  the  first  very  large  vehicle activity  dataset  for event and frame-based cameras.  This  dataset is composed of both synthetic and real-world dataset with more than 68hours  of  automotive  recordings  acquired  with  a  346 x 260 pixels DVS event camera. It  contains  open  roads  and  very  diverse driving  scenarios,  ranging  from  urban,  highway,  suburbs and countryside scenes, as well as different weather and illumination conditions. We also present a class of efficient model called n-EAR for on-board vehicle activity recognition on autonomous vehicles. The core decision making in a self driving car relies heavily on the relative position of the vehicle with respect to its surroundings. We introduce two novel techniques, first an event based attention sampling technique that leverages on the bio-inspired event data to adaptively sample the frame-based data. Secondly, a two-stream architecture that that efficiently trade off between latency and accuracy. We bring these two ideas together to build the n-EAR. We also present a modified carla simulator to generate data that can be used for solving the challenges faced in autonomous driving vehicles.</p>
+   <!--  <div class="w3-panel w3-leftbar w3-light-grey">
+      <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
+      <p>Chef, Coffeeist and Owner: Liam Brown</p>
+    </div> -->
+
+     <figure>
+  <img src="images/converted.gif" style="width:100%;max-width:1000px" class="w3-margin-top">
+  <figcaption>Frame-Based and Event-Based Data</figcaption>
+</figure> 
+
+    
+   <!--  <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
+    <p><strong>Address:</strong> 15 Adr street, 5015, NY</p> -->
+  </div>
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:1000px">
+ 
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">DATASET CONTENT</span></h5>
+    <p>
+	
+<ul>
+<li>The dataset is split between train, test and val folders. </li>
+
+<li>Files consist of recordings that were cut from longer recording sessions. Cuts from a single recording session are all in the same training split.</li>
+
+<li>Each dat file is a Numpy npz file in which events are encoded using 4 bytes (unsigned int32) for the timestamps and 4 bytes (unsigned int32) for the data, encoding is little-endian ordering.</li>
+
+<li>The data is composed of 14 bits for the x position, 14 bits for the y position and 1 bit for the polarity (encoded as -1/1).</li>
+<li>Frame based clips are also saved in npz format </li>
+<li>Odometery in GoPro metadata format</li>
+<li>  open  roads  and  very  diverse driving  scenarios,  ranging  from  urban,  highway,  suburbs and countryside scenes</li>
+<li> 5 Different weather and illumination conditions</li>
+</ul>
+
+</p>
+  
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">Event-Based</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+        <div class="w3-col s6 tablink">Frame-Based</div>
+      </a>
+    </div>
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Event Based Camera: DAVIS 346</h5>
+      <h5>Frame Resolution:346x 260pixels,Grayscale disabled, output with DVS</h5>
+      <h5>Temporal Resolution: ~240Hz(variable)</h5>
+      
+      <!-- <p class="w3-text-grey"></p> -->
+      <h5>DVS Dynamic range: 120 dB</h5>
+      <!-- <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br> -->
+    
+      <h5>APS dark signal: 18000 e-/s</h5>
+      <!-- <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br> -->
+    
+      <h5>APS readout noise: 55 e-</h5>
+      <!-- <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br> -->
+
+    
+      <h5>Documentation</h<!-- 5>
+       <a href="https://inivation.com/wp-content/uploads/2019/08/DAVIS346.pdf">davis 346 - iniVation</a> 
+    </div>
+
+    <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+      <h5>Go Pro Hero 7</h5>
+      <!-- <p class="w3-text-grey">Regular coffee 2.50</p><br> -->
+    
+      <h5>Resolution: 1080p, 60fps</h5>
+      <h5>Documentation</h<!-- 5>
+       <a href="https://gopro.com/content/dam/help/hero-2018/HERO_UM_ENG_REVA.pdf">HERO7 Black</a> 
+      <!-- <p class="w3-text-grey">Chocolate espresso with milk 4.50</p><br>
+    
+      <h5>Corretto</h5>
+      <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
+    
+      <h5>Iced tea</h5>
+      <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
+    
+      <h5>Soda</h5>
+      <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p> -->
+    </div>  
+
+    <p>
+
+
+   <ul>
+    	 <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">n-EAR Dataset and Annotation Specififcations</span></h5>
+
+ <li>Annotations use the numpy format and can simply be loaded form python using numpy boxes = np.load(path)</li>
+
+ <li>Boxes have the following fields</li>
+
+    <li>x abscissa of the top left corner in pixels</li>
+    <li>y ordinate of the top left corner in pixels</li>
+    <li>w width of the boxes in pixel</li>
+    <li>h height of the boxes in pixel</li>
+    <li>ts timestamp of the box in the sequence in microseconds</li>
+    <li>class_id 0 for cars and 1 for pedestrians</li>
+    <li>activity accelerating, deaccelerating, Turing Right, Turning Left, Pedestrians on Footpath, Pedestrians on Road</li>  
+
+<li>Alongside the dataset, we also release sample code in Python to conveniently read the events and annotations: Github repository</li>
+
+<li>For more information on how the dataset was created,  <a href="https://labs.dese.iisc.ac.in/neuronics/">please refer to the paper.</a> </li>
+</ul>
+
+ <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Synthetic Data</span></h5>
+ 			<p>CARLA Simulator Datapoint Statistics</p>
+    	 <img src="images/carla.gif" style="width:100%;max-width:1000px;margin-top:32px;">
+    	 <p>Actvity Labels</p>
+    	<img src="images/example.gif" height="600" style="width:100%;max-width:1000px;margin-top:32px;">
+
+    	<img src="images/n-ear_res.gif" style="width:100%;max-width:1000px;margin-top:32px;">
+
+
+    	<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Real-World Data</span></h5>
+    		<p>Frame-Based Data with Odometry</p>
+    	<img src="images/ddd.gif" width="1000" height="600"; style="width:100%;max-width:1000px;margin-top:32px;">
+    	<p>Activity Labels on Frame-Based Data</p>
+    	<img src="images/real2.gif" width="1000" height="600";style="width:100%;max-width:1000px;margin-top:32px;">
+    	<p>Activity Labels on Event-Based Data</p>
+    	<img src="images/real.gif" width="1000" height="600";style="width:80%;max-width:900px;margin-top:32px;">
+
+    	
+</p>
+
+    
+  </div>
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CITING n-EAR Acitivity Dataset</span></h5>
+    <!-- <p>Find us at some address at some place.</p> -->
+    <!-- <img src="/w3images/map.jpg" class="w3-image" style="width:100%"> -->
+    <p><span class="w3-tag">FYI!</span> If the links are broken please email to neuronics@iisc.ac.in</p>
+    <p><strong>CAUTION</strong> If dataset is used in you research, dont forget to cite us!!! Please fill the below form to recieve the resilio sync download link</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="email ID" required name="People"></p>
+      <!-- <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p> -->
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Academia/Industry" required name="Message"></p>
+      <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
+    </form>
+
+<!-- <blockquote>
+    <p><cite></p> 
+</blockquote>
+ -->
+ 
+  </div>
+</div>
+
+ <blockquote cite="http://www.worldwildlife.org/who/index.html">
+n-EAR paper Once uploaded to arXiv we can cited her
+</blockquote>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://labs.dese.iisc.ac.in/neuronics/people/" title="W3.CSS" target="_blank" class="w3-hover-text-green">brains</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
